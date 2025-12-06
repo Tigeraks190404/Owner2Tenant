@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Owner Login - Owner2Tenant</title>
+    <title>List Your Property - Owner2Tenant</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -22,21 +22,7 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-        }
-
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            flex-grow: 1;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding-top: 80px;
-            /* Space for navbar */
+            background-color: #f3f4f6;
         }
 
         .navbar {
@@ -166,34 +152,62 @@
             color: #2563eb;
         }
 
-        .login-card {
+        .form-section {
+            padding: 120px 2rem 4rem 2rem;
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+                url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .form-container {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            padding: 2.5rem;
+            padding: 3rem;
             border-radius: 1rem;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 400px;
-            margin: 2rem;
+            max-width: 800px;
         }
 
-        .login-header {
+        .form-header {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
 
-        .login-header h2 {
+        .form-header h2 {
             color: #1f2937;
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 0.5rem;
         }
 
-        .login-header p {
+        .form-header p {
             color: #6b7280;
+            font-size: 1.1rem;
+        }
+
+        .form-section-title {
+            color: #2563eb;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e5e7eb;
+            margin-top: 2rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .form-group label {
@@ -203,68 +217,69 @@
             font-weight: 500;
         }
 
-        .form-group input {
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
             width: 100%;
             padding: 0.75rem;
             border: 2px solid #e5e7eb;
             border-radius: 0.5rem;
             font-size: 1rem;
             transition: all 0.3s;
+            background: white;
+            font-family: inherit;
         }
 
-        .form-group input:focus {
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
             outline: none;
             border-color: #2563eb;
             box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
 
-        .login-btn {
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .file-upload {
+            border: 2px dashed #cbd5e1;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: #f8fafc;
+        }
+
+        .file-upload:hover {
+            border-color: #2563eb;
+            background: #eff6ff;
+        }
+
+        .file-upload i {
+            font-size: 2rem;
+            color: #64748b;
+            margin-bottom: 1rem;
+        }
+
+        .submit-btn {
             width: 100%;
             background: #2563eb;
             color: white;
-            padding: 0.875rem;
+            padding: 1rem;
             border: none;
             border-radius: 0.5rem;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
             transition: background 0.3s;
-            margin-top: 1rem;
+            margin-top: 3rem;
         }
 
-        .login-btn:hover {
+        .submit-btn:hover {
             background: #1d4ed8;
-        }
-
-        .form-footer {
-            margin-top: 1.5rem;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #6b7280;
-        }
-
-        .form-footer a {
-            color: #2563eb;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .form-footer a:hover {
-            text-decoration: underline;
-        }
-
-        .forgot-password {
-            display: block;
-            text-align: right;
-            color: #2563eb;
-            text-decoration: none;
-            font-size: 0.875rem;
-            margin-top: -1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .forgot-password:hover {
-            text-decoration: underline;
         }
 
         /* Footer Styles */
@@ -421,6 +436,10 @@
             .footer {
                 padding: 3rem 1rem 1rem 1rem;
             }
+
+            .form-container {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -449,26 +468,129 @@
         </ul>
     </div>
 
-    <section class="hero-section">
-        <div class="login-card">
-            <div class="login-header">
-                <h2>Owner Login</h2>
-                <p>Welcome back! Please login to your account.</p>
+    <section class="form-section">
+        <div class="form-container">
+            <div class="form-header">
+                <h2>List Your Property</h2>
+                <p>Fill in the details below to find your perfect tenant</p>
             </div>
+
             <form>
+                <!-- Room Information -->
+                <h3 class="form-section-title">Room Information</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="room-type">Room Type</label>
+                        <select id="room-type" required>
+                            <option value="">Select Type</option>
+                            <option value="single">Single Room</option>
+                            <option value="double">Double Room</option>
+                            <option value="shared">Shared Room</option>
+                            <option value="apartment">Full Apartment</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="room-size">Room Size</label>
+                        <input type="text" id="room-size" placeholder="e.g. 12x14 ft or 200 sq ft" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="furnishing">Furnishing Status</label>
+                        <select id="furnishing" required>
+                            <option value="">Select Status</option>
+                            <option value="fully">Fully Furnished</option>
+                            <option value="semi">Semi Furnished</option>
+                            <option value="unfurnished">Unfurnished</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Financials -->
+                <h3 class="form-section-title">Financial Details</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="rent">Monthly Rent (₹)</label>
+                        <input type="number" id="rent" placeholder="e.g. 5000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="deposit">Security Deposit (₹)</label>
+                        <input type="number" id="deposit" placeholder="e.g. 10000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="maintenance">Maintenance Charges (₹)</label>
+                        <input type="number" id="maintenance" placeholder="e.g. 500 (if any)">
+                    </div>
+                    <div class="form-group">
+                        <label for="electricity">Electricity Charges</label>
+                        <select id="electricity" required>
+                            <option value="included">Included in Rent</option>
+                            <option value="extra">Extra (As per meter)</option>
+                            <option value="fixed">Fixed Amount</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Location -->
+                <h3 class="form-section-title">Location & Accessibility</h3>
                 <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" placeholder="Enter your email" required>
+                    <label for="address">Full Address</label>
+                    <textarea id="address" placeholder="Enter complete property address" required></textarea>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="landmark">Nearby Landmark</label>
+                        <input type="text" id="landmark" placeholder="e.g. Near City Mall" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dist-bus">Distance to Bus Stop</label>
+                        <input type="text" id="dist-bus" placeholder="e.g. 500m">
+                    </div>
+                    <div class="form-group">
+                        <label for="dist-market">Distance to Market</label>
+                        <input type="text" id="dist-market" placeholder="e.g. 1 km">
+                    </div>
+                    <div class="form-group">
+                        <label for="dist-college">Distance to College/Office</label>
+                        <input type="text" id="dist-college" placeholder="e.g. 2.5 km">
+                    </div>
+                </div>
+
+                <!-- Amenities & Photos -->
+                <h3 class="form-section-title">Amenities & Photos</h3>
+                <div class="form-group">
+                    <label for="parking">Parking Available?</label>
+                    <select id="parking" required>
+                        <option value="no">No</option>
+                        <option value="yes-bike">Yes (Bike only)</option>
+                        <option value="yes-car">Yes (Car & Bike)</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter your password" required>
+                    <label>Property Photos (Min. 5 photos)</label>
+                    <div class="file-upload" onclick="document.getElementById('photos').click()">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Click to upload photos</p>
+                        <input type="file" id="photos" multiple accept="image/*" style="display: none" required>
+                    </div>
                 </div>
-                <a href="#" class="forgot-password">Forgot Password?</a>
-                <button href="roomdetails.html" type="submit" class="login-btn">Login</button>
-                <div class="form-footer">
-                    <p>Don't have an account? <a href="ownersignup.html">Create a new account</a></p>
+
+                <!-- Owner Details -->
+                <h3 class="form-section-title">Owner Details</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="owner-name">Full Name</label>
+                        <input type="text" id="owner-name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="owner-phone">Contact Number</label>
+                        <input type="tel" id="owner-phone" placeholder="Your Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="owner-email">Email Address</label>
+                        <input type="email" id="owner-email" placeholder="Your Email">
+                    </div>
                 </div>
+
+                <button type="submit" class="submit-btn">List Property</button>
             </form>
         </div>
     </section>
