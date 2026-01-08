@@ -590,7 +590,8 @@
                     </div>
                 </div>
 
-                <button type="submit" class="submit-btn">List Property</button>
+                <a href="allrooms.html" class="submit-btn"
+                    style="display: block; text-align: center; text-decoration: none;">List Property</a>
             </form>
         </div>
     </section>
@@ -664,6 +665,33 @@
             } else {
                 navbar.classList.remove('scrolled');
             }
+        });
+
+        // Form Submission Handler
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Collect Data
+            const roomData = {
+                id: Date.now(),
+                type: document.getElementById('room-type').options[document.getElementById('room-type').selectedIndex].text,
+                rent: parseInt(document.getElementById('rent').value),
+                deposit: parseInt(document.getElementById('deposit').value),
+                location: document.getElementById('address').value, // Using address as location for simplicity
+                description: document.getElementById('address').value + ', ' + document.getElementById('landmark').value, // Constructing description
+                image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80', // Default image as file upload is not real
+                amenities: ['Parking', 'Wifi'], // Dummy amenities
+                date: new Date()
+            };
+
+            // Save to LocalStorage
+            let rooms = JSON.parse(localStorage.getItem('rooms')) || [];
+            rooms.unshift(roomData); // Add to beginning
+            localStorage.setItem('rooms', JSON.stringify(rooms));
+
+            // Redirect
+            window.location.href = 'allrooms.html';
         });
     </script>
 </body>
